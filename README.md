@@ -1,1 +1,1 @@
-# csc3916_assignment2-GrowingPaigns
+# CSCI3916 Assignment 2 - Samuel Hilfer
