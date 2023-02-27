@@ -101,7 +101,6 @@ router.post('/signup', (req, res) => { // takes in json object body
         db.save(newUser); //no duplicate checking - just appending/saving to the array
         res.json({success: true, message: 'Successfully created new user.',response: o}) // return success msg
 
-        //res.json(o); // send json back to the object
     }
 });
 
@@ -125,7 +124,6 @@ router.post('/signin', (req, res) => {
             var o = getJSONObjectForMovieRequirement(req);
             res.json ({success: true, token: 'JWT ' + token , response: o});
 
-            //res.json(o); // send json back to the object
         }
         else { // if passwords do no match - send error
             res.status(401).send({success: false, msg: 'Authentication failed.'});
@@ -134,7 +132,7 @@ router.post('/signin', (req, res) => {
 });
 
 /* Server Route #3: Movie Collection */
-router.route('/testcollection') // this will be movie
+router.route('/movies')
     .all(movieMethodCheck) // ensure no improper methods are used in movie calls
     .post((req, res) => {
             console.log(req.body);
